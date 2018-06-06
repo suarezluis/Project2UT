@@ -34,7 +34,13 @@ body{
   .welcome{
       background-color: black;
       color: white;
-      width: fit-content;
+      width: 60%;
       opacity: 1;
+      margin: 30vh auto;
+      z-index: -99;
       
+  }
+
+  .welcome p{
+      margin: 0 10%;
   }
