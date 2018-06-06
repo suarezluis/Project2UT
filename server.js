@@ -21,14 +21,13 @@
 
 
      //For Handlebars
-    app.set('views', './app/views')
-    app.engine('hbs', exphbs({extname: '.hbs'}));
-    app.set('view engine', '.hbs');
+     app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+     app.set("view engine", "handlebars");
     
 
-    app.get('/', function(req, res){
-	  res.send('Welcome to Passport with Sequelize');
-	});
+    // app.get('/', function(req, res){
+	//   res.send('Welcome to Passport with Sequelize');
+	// });
 
 
 	//Models
