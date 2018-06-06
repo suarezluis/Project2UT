@@ -1,0 +1,19 @@
+body{
+    margin:0;
+    font: normal 16px Arial, Helvetica, sand-serif;
+    color:#333;
+  }
+  
+  #particles-js{
+    position: absolute;
+    top: 0;
+    background:firebrick;
+    height:100vh;
+    width: 100vw;
+  }
+
+  canvas{
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
