@@ -43,13 +43,13 @@ a{
 
 .navigation{
     margin-right: 20px;
-    color: blue;
+    color: #1c86e7;
 }
 .welcome {
   position: absolute;
   display: block;
-  background-color: rgb(14, 14, 14);
-  color: white;
+  background-color: white;
+  color: #1c86e7;
   width: 50%;
   opacity: 1;
   margin: 30vh 25%;
@@ -99,8 +99,8 @@ ul{
 .signIn {
     position: absolute;
     display: block;
-    background-color: rgb(14, 14, 14);
-    color: white;
+    background-color: white;
+    color: #1c86e7;
     width: 40%;
     opacity: 1;
     margin: 30vh 30%;
@@ -118,8 +118,8 @@ ul{
   .signUp {
     position: absolute;
     display: block;
-    background-color: rgb(14, 14, 14);
-    color: white;
+    background-color: white;
+    color: #1c86e7;
     width: 40%;
     opacity: 1;
     margin: 30vh 30%;
@@ -137,12 +137,22 @@ ul{
   .dashboard{
     position: absolute;
     display: block;
-    background-color: rgb(14, 14, 14);
-    color: white;
+    background-color: white;
+    color: #1c86e7;
     width: 40%;
     opacity: 1;
     margin: 30vh 30%;
     border-radius: 30px;
     opacity: 0.9;
     text-align: center;
+  }
+
+  input{
+    background-color: #64aaec;
+    color:white;
+    border: 0;
+  }
+
+  input:hover{
+    cursor: pointer;
   }
