@@ -6,7 +6,7 @@ var bodyParser = require("body-parser");
 var env = require("dotenv").load();
 var exphbs = require("express-handlebars");
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3310;
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -49,8 +49,7 @@ models.sequelize
     console.log(err, "Something went wrong with the Database Update!");
   });
 
-  app.listen(process.env.PORT, function(err){
-		if(!err)
-		console.log("Site is live"); else console.log(err)
-
-	});
+app.listen(PORT, function() {
+  // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
+});
