@@ -49,7 +49,8 @@ models.sequelize
     console.log(err, "Something went wrong with the Database Update!");
   });
 
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
-});
+  app.listen(5000, function(err){
+		if(!err)
+		console.log("Site is live"); else console.log(err)
+
+	});
