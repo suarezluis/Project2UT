@@ -1,53 +1,135 @@
-body{
-    margin:0;
-    font: normal 16px Arial, Helvetica, sand-serif;
-    color:#333;
-  }
-  
-  #particles-js{
-    background:firebrick;
-    height:100vh;
-    width: 100vw;
-  }
-
-  
-
-  .navbar{
-    position:absolute;
-    text-align: right;
-    width: 100%;  
-    background-color: white;
-      padding: 5px;
-      padding-right: 15px;
-
-  }
-  .logo{
-    position: absolute;
-     left: 0;
-    display: inline;
-      margin-left:15px;
-  }
-
-  .welcome{
-    position:absolute;  
+html{
+    height: 100vh;
     
-    background-color: black;
-      color: white;
-      width: 60%;
-      opacity: 1;
-      margin: 30vh auto;
-      
-      
+}
+body {
+  margin: 0;
+  font: normal 16px Arial, Helvetica, sand-serif;
+  color: #333;
+  
+}
+
+a{
+    text-decoration: none;
+    color: firebrick;
+}
+
+#particles-js {
+  background: firebrick;
+  height: 99vh;
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  text-align: right;
+  width: 100%;
+  height: 40px;;
+  background-color: white;
+  font-size: 25px;
+  padding-top: 5px;
+  
+  
+}
+.logo {
+  position: absolute;
+  left: 0;
+  display: inline;
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.navigation{
+    margin-right: 20px;
+    color: blue;
+}
+.welcome {
+  position: absolute;
+  display: block;
+  background-color: rgb(14, 14, 14);
+  color: white;
+  width: 50%;
+  opacity: 1;
+  margin: 30vh 25%;
+  border-radius: 30px;
+  opacity: 0.9;
+
+}
+
+.welcome h1 {
+  display: block;
+  font-size: 40px;
+  color: firebrick;
+  font-weight: bolder;
+  text-align: center;
+  
+}
+
+.welcome h4 {
+    display: block;
+   
+    color: firebrick;
+   
+    text-align: center;
+    
   }
 
-  .welcome h1{
-      display: unset;
-      font-size: 40px;
-      color: firebrick;
-      font-weight: bolder;
-      text-align: center;
+.welcome p {
+  margin: 0 10%;
+}
+
+ul{
+    margin:10px 20%;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    text-align: right;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    padding: 5px;
+    
+}
+
+
+.signIn {
+    position: absolute;
+    display: block;
+    background-color: rgb(14, 14, 14);
+    color: white;
+    width: 40%;
+    opacity: 1;
+    margin: 30vh 30%;
+    border-radius: 30px;
+    opacity: 0.9;
+    text-align: center;
+  
   }
 
-  .welcome p{
-      margin: 0 10%;
+ .signIn input, .signIn label {
+      
+      font-size: 25px;
+  }
+
+  .signUp {
+    position: absolute;
+    display: block;
+    background-color: rgb(14, 14, 14);
+    color: white;
+    width: 40%;
+    opacity: 1;
+    margin: 30vh 30%;
+    border-radius: 30px;
+    opacity: 0.9;
+    text-align: center;
+  
+  }
+
+ .signUp input, .signUp label {
+      
+      font-size: 25px;
   }
