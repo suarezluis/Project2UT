@@ -1,7 +1,7 @@
 {
     "particles":{
       "number":{
-        "value":300
+        "value":200
       },
       "color":{
         "value":"random"
@@ -51,6 +51,7 @@
         "onclick":{
           "enable": true,
           "mode":"push"
+          
         }
       },
       "modes":{
@@ -61,6 +62,9 @@
         "bubble":{
           "distance":100,
           "size":10
+        },
+        "push":{
+          "particles_nb":10
         }
       }
     }
