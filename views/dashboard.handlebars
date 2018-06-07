@@ -1,8 +1,26 @@
 <div class="navbar">
     <p class="logo">Project II</p>
     <a class="navigation" href="/help">Help</a>
+    <a class="navigation" href="/settings">Settings</a>
     <a class="navigation" href="/logout">Log Out</a>
 </div>
-<h2>Dashboard</h2>
-<h5>Hurray! you are logged in.</h5>
 
+<div class="dashboard">
+    <h1> Welcome {{name}} </h1>
+    <div class="myTables">
+        <h4>Your tables:</h4>
+    </div>
+    <div class="createTable">
+        <form id="signup" name="signup" method="post" action="/addTable">
+            <br>
+            <label for="tableName">Table Name</label>
+            <br>
+            <input class="text" name="tableName" type="tableName" required/>
+            <br>
+            <input class="btn" type="submit" value="Create" required/>
+            <br>
+            <br>
+        </form>
+    </div>
+
+</div>
