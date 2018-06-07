@@ -4,10 +4,10 @@
     "dialect": "mysql"
   },
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "project2_db",
-    "host": "localhost",
+    "username": "o4dos9uf33sa9cjj",
+    "password": "oozl64ib2h2sb470",
+    "database": "ktcfwlfeylehs0w9",
+    "host": "j1r4n2ztuwm0bhh5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
