@@ -47,19 +47,28 @@ a{
 }
 .welcome {
   position: absolute;
-  display: block;
+  display: inline-block;
   background-color: white;
   color: #1c86e7;
   width: 50%;
   opacity: 1;
-  margin: 30vh 25%;
+  margin: 100px 25%;
   border-radius: 30px;
   opacity: 0.9;
 
 }
 
-.welcome h1 {
+.logoIMG{
+  position: unset;
   display: block;
+  margin: 30px auto 10px;
+  width: 30%;
+  border: solid 1px #1c86e7;
+  border-radius: 10px;
+  box-shadow: 5px 5px 35px #1c86e7
+}
+
+.welcome h1 {
   font-size: 40px;
   color: firebrick;
   font-weight: bolder;
@@ -68,7 +77,7 @@ a{
 }
 
 .welcome h4 {
-    display: block;
+    
    
     color: firebrick;
    
@@ -151,8 +160,11 @@ ul{
     background-color: #64aaec;
     color:white;
     border: 0;
+    padding: 5px;
+    border-radius: 10px;
   }
 
   input:hover{
     cursor: pointer;
   }
+
