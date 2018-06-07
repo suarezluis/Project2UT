@@ -14,8 +14,8 @@ a{
     color: firebrick;
 }
 
-#particles-js {
-  background: firebrick;
+#animatedBG {
+  background: #1c86e7;
   height: 99vh;
   width: 100%;
 }
