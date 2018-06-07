@@ -39,18 +39,17 @@ var authRoute = require("./app/routes/auth.js")(app, passport);
 //load passport strategies
 require("./app/config/passport/passport.js")(passport, models.user);
 
-
+//Sync Database
+models.sequelize
+  .sync()
+  .then(function() {
+    console.log("Nice! Database looks fine");
+  })
+  .catch(function(err) {
+    console.log(err, "Something went wrong with the Database Update!");
+  });
 
 app.listen(PORT, function() {
-  //Sync Database
-models.sequelize
-.sync()
-.then(function() {
-  console.log("Nice! Database looks fine");
-})
-.catch(function(err) {
-  console.log(err, "Something went wrong with the Database Update!");
-});
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
