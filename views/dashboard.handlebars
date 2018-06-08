@@ -9,19 +9,56 @@
     <h1> Welcome {{name}} </h1>
     <div class="myTables">
         <h4>Your tables:</h4>
+        {{#each tableList}}
+        <p>tableName: {{tableName}}</p>
+        
+        
+        
+        {{/each}}
     </div>
     <div class="createTable">
-        <form id="signup" name="signup" method="post" action="/addTable">
+        <form id="newTable" name="newTable" method="post" action="/newTable">
             <br>
             <label for="tableName">Table Name</label>
             <br>
             <input class="text" name="tableName" type="tableName" required/>
             <br>
             <br>
-            <input class="btn" type="submit" value="Create" required/>
-            <br>
-            <br>
-        </form>
-    </div>
+            <div class="threeColumns">
+                <div class="axis">
+                    <br> Name
+                    <br>
+                    <br> Value
+                </div>
 
-</div>
+                <div>
+                    X
+                    <br>
+                    <input class="text" name="xName" type="xName" required/>
+                    <br>
+                    <br>
+                    <input class="text" name="xValue" type="xValue" required/>
+                </div>
+
+
+
+                <div>
+                    Y
+                    <br>
+                    <input class="text" name="yName" type="yName" required/>
+                    <br>
+                    <br>
+                    <input class="text" name="yValue" type="yValue" required/>
+
+
+                </div>
+                 </div>     
+                 <br>          
+                <input class="btn" type="submit" value="Create" required/>
+                <br>
+                <br>
+
+        </form>
+        </div>
+
+    
