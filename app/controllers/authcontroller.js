@@ -45,3 +45,7 @@ exports.newTable = function(req, res) {
   console.log(req.body);
   res.redirect("/");
 };
+
+exports.help = function(req, res) {
+  res.render("help");
+};

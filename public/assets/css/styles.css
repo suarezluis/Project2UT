@@ -151,7 +151,7 @@ ul{
     color: #1c86e7;
     width: 40%;
     opacity: 1;
-    margin: 30vh 30%;
+    margin: 10vh 30%;
     border-radius: 30px;
     opacity: 0.9;
     text-align: center;
@@ -174,3 +174,44 @@ ul{
     grid-template-columns: 1fr 3fr 3fr;
     
   }
+
+  .myTables{
+    /* background-color: red;
+    display: inline-block; */
+    width: 100%
+  }
+
+.table{
+  display: inline-block;
+  margin: 10px;
+}
+
+  .tableIcon{
+    width: 50px;
+  }
+
+  .helpDisplay{
+    position: absolute;
+    /* display: block; */
+    background-color: white;
+    color: #1c86e7;
+    width: 80%;
+    opacity: 1;
+    margin: 10vh 10%;
+    border-radius: 30px;
+    opacity: 0.9;
+    text-align: center;
+  }
+  .graph{
+    width: 90%;
+    /* display: inline-block; */
+  }
+
+  .tableAndGraph{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    height: 80vh;
+    /* height: 300px; */
+    /* width: 100% ; */
+    /* height: fit-content; */
+  } 

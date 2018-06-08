@@ -27,6 +27,8 @@ module.exports = function(app, passport) {
     })
   );
 
+  app.get("/help", authController.help);
+
 
 
 

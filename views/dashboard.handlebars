@@ -10,13 +10,17 @@
     <div class="myTables">
         <h4>Your tables:</h4>
         {{#each tableList}}
-        <p>tableName: {{tableName}}</p>
-        
-        
-        
+        <div class="table">
+            <img class="tableIcon" src="assets/img/tableIcon.png" alt="">
+            <p>{{tableName}}</p>
+        </div>
+
+
         {{/each}}
     </div>
     <div class="createTable">
+        <br>
+        <h2 class="subtittle">Create New Table</h2>
         <form id="newTable" name="newTable" method="post" action="/newTable">
             <br>
             <label for="tableName">Table Name</label>
@@ -52,13 +56,11 @@
 
 
                 </div>
-                 </div>     
-                 <br>          
-                <input class="btn" type="submit" value="Create" required/>
-                <br>
-                <br>
+            </div>
+            <br>
+            <input class="btn" type="submit" value="Create" required/>
+            <br>
+            <br>
 
         </form>
-        </div>
-
-    
+    </div>
