@@ -15,5 +15,4 @@ module.exports = function(sequelize, Sequelize) {
 });
 	
 	return Userdata;
-
 }
