@@ -6,7 +6,7 @@ module.exports = function(app) {
     console.log(req.user.email)
     var newJSON = req.body;
     newJSON.username = req.user.email;
-          db.userdata.create(newJSON).then(function() {
+          db.userdata.create(newJSON).then(function(dbAuthor) {
         res.redirect("/dashboard");
       });
     });

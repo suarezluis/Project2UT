@@ -20,9 +20,18 @@ exports.dashboard = function(req, res) {
 		  username: req.user.email
 	  }
   }).then(function(data){
-	console.log(data[0].tableName)
-	res.render("dashboard", { name: req.user.firstname, tableList: data });
-  });
+	//console.log(data[0].tableName)
+  
+  if(data[0] != undefined){
+  
+  res.render("dashboard", { name: req.user.firstname, tableList: data });
+  } 
+
+  else{
+    res.render("dashboard", { name: req.user.firstname, tableList: [""] });
+  }
+
+});
  
 };
 
