@@ -29,9 +29,9 @@ module.exports = function(app, passport) {
 
   app.get("/help", authController.help);
 
+  app.get("/settings", isLoggedIn, authController.settings);
 
-
-
+  app.get("/table", isLoggedIn, authController.table);
 
 
   function isLoggedIn(req, res, next) {

@@ -69,6 +69,19 @@
     </tr>
 
   </table>
+<br>
+  <label for="">Mean:</label>9.90165
+<br>
+  <label for="">Max:</label>16.8
+<br>
+  <label for="">Min:</label>0.0165
+<br>
+  <label for="">Standard Deviation:</label>5.99
+  <br>
+  <label for="">Prediction for next Value:</label>17.2
+  
+
+
   </div>
   <div id="myDiv" class="graph">
     <!-- Plotly chart will be drawn inside this DIV -->
@@ -78,17 +91,17 @@
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script> 
-  var trace1 = {
+  var Supply = {
     x: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
     y: [0.0165, 1.7, 5, 8, 10.6, 12.2, 13.7, 15, 16, 16.8],
     type: 'scatter'
   };
-  var trace2 = {
+  var Prediction = {
     x: [2009, 2019],
     y: [2.5, 17.2],
     type: 'scatter'
   };
-  var data = [trace1, trace2];
+  var data = [Supply, Prediction];
   Plotly.newPlot('myDiv', data);
 
 </script>

@@ -1,0 +1,80 @@
+<div class="navbar">
+  <p class="logo">Project II</p>
+  <a class="navigation" href="/dashboard">Dashboard</a>
+  <a class="navigation" href="/settings">Settings</a>
+  <a class="navigation" href="/logout">Log Out</a>
+</div>
+
+<div class="helpDisplay">
+  <h1> TABLE DISPLAY </h1>
+
+  <div class="tableAndGraph">
+    <div class="tableDisplay">
+    <table>
+    <tr>
+      <th>{{xName}}</th>
+      <th>{{yName}}</th>
+
+    </tr>
+    {{#each data}}
+        <tr>
+         <td>{{this.dataValues.xValue}}</td>
+         <td>{{this.dataValues.yValue}}</td>
+        </tr>    
+    {{/each}}
+
+    
+    
+    
+  </table>
+<br>
+  <label for="">Mean: </label>{{mean}}
+<br>
+  <label for="">Max: </label>{{max}}
+<br>
+  <label for="">Min: </label>{{min}}
+<br>
+  <label for="">Standard Deviation: </label>{{sd}}
+  <br>
+  <label for="">Lineal regression: </label><br>{{linearEquation}}
+  <br>
+  <label for="">Polinomial regression: </label><br>{{polynomialEquation}}
+
+
+  </div>
+  <div id="myDiv" class="graph">
+    <!-- Plotly chart will be drawn inside this DIV -->
+  </div>
+</div>
+  </div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script> 
+  var layout = {
+  title: "{{tableName}}"
+};
+  
+  var Supply = {
+    x: [{{xValues}}],
+    y: [{{yValues}}],
+    type: 'scatter',
+    name: 'Data'
+  };
+  var linearPrediction = {
+    x: [{{pXValues}}],
+    y: [{{pLYValues}}],
+    type: 'scatter',
+    name: 'Linear'
+  };
+
+  var polynomialPrediction = {
+    x: [{{pXValues}}],
+    y: [{{pPYValues}}],
+    type: 'scatter',
+    name: 'Polynomial'
+  };
+
+  var data = [Supply, linearPrediction, polynomialPrediction];
+  Plotly.newPlot('myDiv', data, layout);
+
+</script>
