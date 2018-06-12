@@ -7,70 +7,111 @@
 
 <div class="helpDisplay">
   <h1> TABLE DISPLAY </h1>
-
+  {{tableName}}
   <div class="tableAndGraph">
     <div class="tableDisplay">
-    <table>
-    <tr>
-      <th>{{xName}}</th>
-      <th>{{yName}}</th>
-
-    </tr>
-    {{#each data}}
+      <table>
         <tr>
-         <td>{{this.dataValues.xValue}}</td>
-         <td>{{this.dataValues.yValue}}</td>
-        </tr>    
-    {{/each}}
+          <th>{{xName}}</th>
+          <th>{{yName}}</th>
 
-    
-    
-    
-  </table>
-<br>
-  <label for="">Mean: </label>{{mean}}
-<br>
-  <label for="">Max: </label>{{max}}
-<br>
-  <label for="">Min: </label>{{min}}
-<br>
-  <label for="">Standard Deviation: </label>{{sd}}
-  <br>
-  <label for="">Lineal regression: </label><br>{{linearEquation}}
-  <br>
-  <label for="">Polinomial regression: </label><br>{{polynomialEquation}}
+        </tr>
+        {{#each data}}
+        <tr>
+          <td>{{this.dataValues.xValue}}</td>
+          <td>{{this.dataValues.yValue}}</td>
+        </tr>
+        {{/each}}
 
 
-  </div>
-  <div id="myDiv" class="graph">
-    <!-- Plotly chart will be drawn inside this DIV -->
+
+
+      </table>
+      <br>
+      <label for=""> <a href="https://en.wikipedia.org/wiki/Mean" target="blank">Mean:</a>  </label>{{mean}}
+      <br>
+      <label for=""> <a href="https://en.wikipedia.org/wiki/Sample_maximum_and_minimum" target="blank">Max:</a>  </label>{{max}}
+      <br>
+      <label for=""> <a href="https://en.wikipedia.org/wiki/Sample_maximum_and_minimum" target="blank">Min:</a>  </label>{{min}}
+      <br>
+      <label for=""> <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="blank">Standard deviation:</a>  </label>{{sd}}
+      <br>
+      <br>
+      <label for="">Lineal regression: </label>
+      <br>{{linearEquation}}
+      <br>
+      <br>
+      <label for="">Polinomial regression: </label>
+      <br>{{polynomialEquation}}
+
+      <div class="newData">
+        <br>
+        <h2 class="subtittle">Insert New Value</h2>
+        <form id="newValue" name="newValue" method="post" action="/newValue/{{tableName}}/{{xName}}/{{yName}}">
+
+          <br>
+          <div class="fourColumns">
+            <div class="axis">
+
+              <br> Value
+            </div>
+
+            <div>
+              X
+
+              <br>
+              <input class="text newValue" name="xValue" type="xValue" required/>
+            </div>
+
+
+
+            <div>
+              Y
+
+              <br>
+              <input class="text newValue" name="yValue" type="yValue" required/>
+            </div>
+            <div>
+              <br>
+              <input class="btn" type="submit" value="Insert" required/>
+
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+
+    </div>
+    <div id="myDiv" class="graph">
+      <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
   </div>
 </div>
-  </div>
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script> 
   var layout = {
-  title: "{{tableName}}"
-};
-  
+    title: "{{tableName}}"
+  };
+
   var Supply = {
-    x: [{{xValues}}],
-    y: [{{yValues}}],
-    type: 'scatter',
+    x: [{{ xValues }}],
+    y: [{{ yValues }}],
+  type: 'scatter',
     name: 'Data'
   };
   var linearPrediction = {
-    x: [{{pXValues}}],
-    y: [{{pLYValues}}],
-    type: 'scatter',
+    x: [{{ pXValues }}],
+    y: [{{ pLYValues }}],
+  type: 'scatter',
     name: 'Linear'
   };
 
   var polynomialPrediction = {
-    x: [{{pXValues}}],
-    y: [{{pPYValues}}],
-    type: 'scatter',
+    x: [{{ pXValues }}],
+    y: [{{ pPYValues }}],
+  type: 'scatter',
     name: 'Polynomial'
   };
 

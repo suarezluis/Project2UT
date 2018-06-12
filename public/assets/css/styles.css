@@ -237,3 +237,13 @@ ul{
     opacity: 0.9;
     text-align: center;
   }
+
+  .fourColumns{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+  }
+
+  .newValue{
+    width: 70%;
+  }
