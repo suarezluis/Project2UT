@@ -14,12 +14,18 @@
         <tr>
           <th>{{xName}}</th>
           <th>{{yName}}</th>
+          
 
         </tr>
         {{#each data}}
         <tr>
           <td>{{this.dataValues.xValue}}</td>
           <td>{{this.dataValues.yValue}}</td>
+          <td  class="noMargin">
+          <a  href="/deleteRow/{{tableName}}/{{this.dataValues.xValue}}/{{this.dataValues.yValue}}">
+          <img class="deleteIcon2 " src="../assets/img/deleteIcon.png" alt="">
+          </a>
+          </td>
         </tr>
         {{/each}}
 

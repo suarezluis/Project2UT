@@ -219,12 +219,14 @@ ul{
     /* height: fit-content; */
   } 
 
-  table, th,td{
+  th,td{
     margin: auto;
     border: solid 1px #1c86e7;
     padding:  0 10px;
   }
-
+table{
+  margin: auto;
+}
   .settings{
     position: absolute;
     /* display: block; */
@@ -252,3 +254,18 @@ ul{
     width: 16px;
     margin-left: 65px !important;
   }
+
+  .deleteIcon2{
+    width: 16px;
+    
+  }
+
+.noMargin{
+  border: none;
+}
+
+
+
+
+
+
