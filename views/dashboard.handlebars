@@ -11,7 +11,10 @@
         <h4>Your tables:</h4>
         {{#each tableList}}
         <div class="table">
+            <a href="/deleteTable/{{this}}"><img class="deleteIcon" src="assets/img/deleteIcon.png" alt=""></a>
+            <br>
             <a href="/table/{{this}}">
+            
             <img class="tableIcon" src="assets/img/tableIcon.png" alt=""><br>
             {{this}}</a>
             

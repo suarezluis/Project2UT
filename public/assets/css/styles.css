@@ -247,3 +247,8 @@ ul{
   .newValue{
     width: 70%;
   }
+
+  .deleteIcon{
+    width: 16px;
+    margin-left: 65px !important;
+  }
