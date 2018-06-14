@@ -17,18 +17,23 @@ exports.signin = function(req, res) {
 
 exports.dashboard = function(req, res) {
   console.log(req.user.firstname);
-  // models.userdata
-  //   .findAll({
-  //     where: {
-  //       username: req.user.email
-  //     }
-  //   })
-  models.userdata.findAll({Attributes: [req.user.email], group: ['tableName']})
+  models.userdata
+    .findAll({
+      where: {
+        username: req.user.email
+      }
+    })
+  //models.userdata.findAll({Attributes: [req.user.email, 'tableNAme'], group: ['tableName']})
     .then(function(data) {
       //console.log(data[0].tableName)
-
+      var tableList = []
+      data.forEach(element => {
+        console.log("---------------------------------------------------------------",element.tableName)
+        if (tableList.indexOf(element.tableName) == -1){tableList.push(element.tableName)}else{ }
+      });
+      console.log(tableList)
       if (data[0] != undefined) {
-        res.render("dashboard", { name: req.user.firstname, tableList: data });
+        res.render("dashboard", { name: req.user.firstname, tableList: tableList });
       } else {
         res.render("dashboard", { name: req.user.firstname, tableList: [""] });
       }

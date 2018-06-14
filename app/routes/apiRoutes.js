@@ -57,7 +57,7 @@ module.exports = function(app) {
         
         
         pvl = regression.exponential(pairs,);
-        pvp = regression.polynomial(pairs, { order: xValues.length });
+        pvp = regression.polynomial(pairs, { order: xValues.length/2 });
         for (let i = 0; i <= xValues[xValues.length - 1] + 1.2; i += 0.2) {
           pXValues.push(i);
           pLYValues.push(pvl.predict(i)[1]);
