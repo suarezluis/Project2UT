@@ -1,4 +1,6 @@
-<div class="navbar">
+<div id="animatedBG">
+    
+    <div class="navbar">
   <p class="logo">Project II</p>
   <a class="navigation" href="/dashboard">Dashboard</a>
   <a class="navigation" href="/settings">Settings</a>
@@ -6,102 +8,174 @@
 </div>
 
 <div class="helpDisplay">
-  <h1> Help </h1>
-  <h2>Bitcoin Core Money Supply</h2>
-
+  <h1> TABLE DISPLAY </h1>
+  Bitcoin Core Money Supply
   <div class="tableAndGraph">
     <div class="tableDisplay">
-    <table>
-    <tr>
-      <th>Year</th>
-      <th>Supply $(Million)</th>
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Supply $(Million)</th>
+          
 
-    </tr>
-    <tr>
-      <td>2009</td>
-      <td>0.0165</td>
-
-    </tr>
-    <tr>
-      <td>2010</td>
-      <td>1.7</td>
-
-    </tr>
-    <tr>
-      <td>2011</td>
-      <td>5</td>
-
-    </tr>
-    <tr>
-      <td>2012</td>
-      <td>8</td>
-
-    </tr>
-    <tr>
-      <td>2013</td>
-      <td>10.6</td>
-
-    </tr>
-    <tr>
-      <td>2014</td>
-      <td>12.2</td>
-
-    </tr>
-    <tr>
-      <td>2015</td>
-      <td>13.7</td>
-
-    </tr>
-    <tr>
-      <td>2016</td>
-      <td>15</td>
-
-    </tr>
-    <tr>
-      <td>2017</td>
-      <td>16</td>
-
-    </tr>
-    <tr>
-      <td>2018</td>
-      <td>16.8</td>
-
-    </tr>
-
-  </table>
-<br>
-  <label for="">Mean:</label>9.90165
-<br>
-  <label for="">Max:</label>16.8
-<br>
-  <label for="">Min:</label>0.0165
-<br>
-  <label for="">Standard Deviation:</label>5.99
-  <br>
-  <label for="">Prediction for next Value:</label>17.2
-  
+        </tr>
+        <tr>
+          <td>2009</td>
+          <td>0.0165</td>
+          
+        </tr>
+        <tr>
+          <td>2010</td>
+          <td>1.7</td>
+          
+        </tr>
+        <tr>
+          <td>2011</td>
+          <td>5</td>
+          
+        </tr>
+        <tr>
+          <td>2012</td>
+          <td>8</td>
+          
+        </tr>
+        <tr>
+          <td>2013</td>
+          <td>10.6</td>
+          
+        </tr>
+        <tr>
+          <td>2014</td>
+          <td>12.2</td>
+          
+        </tr>
+        <tr>
+          <td>2015</td>
+          <td>13.7</td>
+          
+        </tr>
+        <tr>
+          <td>2016</td>
+          <td>15</td>
+          
+        </tr>
+        <tr>
+          <td>2017</td>
+          <td>16</td>
+          
+        </tr>
+        <tr>
+          <td>2018</td>
+          <td>16.8</td>
+          
+        </tr>
 
 
-  </div>
-  <div id="myDiv" class="graph">
-    <!-- Plotly chart will be drawn inside this DIV -->
+
+
+      </table>
+      <br>
+      <label for=""> <a href="https://en.wikipedia.org/wiki/Mean" target="blank">Mean:</a>  </label>9.90165
+      <br>
+      <label for=""> <a href="https://en.wikipedia.org/wiki/Sample_maximum_and_minimum" target="blank">Max:</a>  </label>16.8
+      <br>
+      <label for=""> <a href="https://en.wikipedia.org/wiki/Sample_maximum_and_minimum" target="blank">Min:</a>  </label>0.0165
+      <br>
+      <label for=""> <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="blank">Standard deviation:</a>  </label>5.996235346958216
+      <br>
+      <br>
+      <label for="">Lineal regression: </label>
+      <br>y &#x3D; -29687.54 + 3903.64 ln(x)
+      <br>
+      <br>
+      <label for="">Polinomial regression: </label>
+      <br>y &#x3D; 0x^5 + 0x^4 + 0x^3 + -0.11x^2 + -902.72x + 1019356.62
+
+      <div class="newData">
+        <br>
+        <h2 class="subtittle">Insert New Value</h2>
+        <form id="newValue" name="newValue" method="post" action="/newValue/Bitcoin Core Money Supply/Year/Supply $(Million)">
+
+          <br>
+          <div class="fourColumns">
+            <div class="axis">
+
+              <br> Value
+            </div>
+
+            <div>
+              Year
+
+              <br>
+              <input class="text newValue" name="xValue" type="xValue" required/>
+            </div>
+
+
+
+            <div>
+              Supply $(Million)
+
+              <br>
+              <input class="text newValue" name="yValue" type="yValue" required/>
+            </div>
+            <div>
+              <br>
+              <input class="btn" type="submit" value="Insert" required/>
+
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+
+    </div>
+    <div id="myDiv" class="graph">
+      <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
   </div>
 </div>
-  </div>
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script> 
+  var layout = {
+    title: "Bitcoin Core Money Supply"
+  };
+
   var Supply = {
-    x: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
-    y: [0.0165, 1.7, 5, 8, 10.6, 12.2, 13.7, 15, 16, 16.8],
-    type: 'scatter'
+    x: [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018],
+    y: [0.0165,1.7,5,8,10.6,12.2,13.7,15,16,16.8],
+  type: 'scatter',
+    name: 'Data'
   };
-  var Prediction = {
-    x: [2009, 2019],
-    y: [2.5, 17.2],
-    type: 'scatter'
+  var linearPrediction = {
+    x: [2009,2009.2,2009.4,2009.6000000000001,2009.8000000000002,2010.0000000000002,2010.2000000000003,2010.4000000000003,2010.6000000000004,2010.8000000000004,2011.0000000000005,2011.2000000000005,2011.4000000000005,2011.6000000000006,2011.8000000000006,2012.0000000000007,2012.2000000000007,2012.4000000000008,2012.6000000000008,2012.8000000000009,2013.000000000001,2013.200000000001,2013.400000000001,2013.600000000001,2013.800000000001,2014.0000000000011,2014.2000000000012,2014.4000000000012,2014.6000000000013,2014.8000000000013,2015.0000000000014,2015.2000000000014,2015.4000000000015,2015.6000000000015,2015.8000000000015,2016.0000000000016,2016.2000000000016,2016.4000000000017,2016.6000000000017,2016.8000000000018,2017.0000000000018,2017.2000000000019,2017.400000000002,2017.600000000002,2017.800000000002,2018.000000000002,2018.200000000002,2018.4000000000021,2018.6000000000022,2018.8000000000022,2019.0000000000023],
+    y: [1.17,1.56,1.95,2.34,2.73,3.12,3.5,3.89,4.28,4.67,5.06,5.45,5.83,6.22,6.61,7,7.39,7.77,8.16,8.55,8.94,9.33,9.71,10.1,10.49,10.88,11.26,11.65,12.04,12.43,12.81,13.2,13.59,13.98,14.36,14.75,15.14,15.53,15.91,16.3,16.69,17.07,17.46,17.85,18.24,18.62,19.01,19.4,19.78,20.17,20.56],
+  type: 'scatter',
+    name: 'Linear'
   };
-  var data = [Supply, Prediction];
-  Plotly.newPlot('myDiv', data);
+
+  var polynomialPrediction = {
+    x: [2009,2009.2,2009.4,2009.6000000000001,2009.8000000000002,2010.0000000000002,2010.2000000000003,2010.4000000000003,2010.6000000000004,2010.8000000000004,2011.0000000000005,2011.2000000000005,2011.4000000000005,2011.6000000000006,2011.8000000000006,2012.0000000000007,2012.2000000000007,2012.4000000000008,2012.6000000000008,2012.8000000000009,2013.000000000001,2013.200000000001,2013.400000000001,2013.600000000001,2013.800000000001,2014.0000000000011,2014.2000000000012,2014.4000000000012,2014.6000000000013,2014.8000000000013,2015.0000000000014,2015.2000000000014,2015.4000000000015,2015.6000000000015,2015.8000000000015,2016.0000000000016,2016.2000000000016,2016.4000000000017,2016.6000000000017,2016.8000000000018,2017.0000000000018,2017.2000000000019,2017.400000000002,2017.600000000002,2017.800000000002,2018.000000000002,2018.200000000002,2018.4000000000021,2018.6000000000022,2018.8000000000022,2019.0000000000023],
+    y: [-1238176.77,-1238445.71,-1238714.67,-1238983.63,-1239252.6,-1239521.58,-1239790.57,-1240059.57,-1240328.57,-1240597.59,-1240866.61,-1241135.64,-1241404.68,-1241673.73,-1241942.79,-1242211.86,-1242480.94,-1242750.02,-1243019.12,-1243288.22,-1243557.33,-1243826.45,-1244095.58,-1244364.72,-1244633.86,-1244903.02,-1245172.18,-1245441.36,-1245710.54,-1245979.73,-1246248.93,-1246518.14,-1246787.36,-1247056.58,-1247325.82,-1247595.06,-1247864.31,-1248133.57,-1248402.84,-1248672.12,-1248941.41,-1249210.71,-1249480.01,-1249749.33,-1250018.65,-1250287.98,-1250557.32,-1250826.67,-1251096.03,-1251365.39,-1251634.77],
+  type: 'scatter',
+    name: 'Polynomial'
+  };
+
+  var data = [Supply, linearPrediction];
+  Plotly.newPlot('myDiv', data, layout);
 
 </script>
+    <div class="footer">
+    Copyright Luis Suarez
+</div>
+</div>
+
+<script src="../assets/js/animation.js"></script>
+
+  <script>
+    animation.load('animatedBG', '../animation.json', function(){
+      
+    });
+  </script>
+  

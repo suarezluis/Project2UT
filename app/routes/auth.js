@@ -1,3 +1,4 @@
+var bCrypt = require('bcrypt-nodejs');
 var authController = require("../controllers/authcontroller.js");
 var models = require("../models");
 var math = require("mathjs");
@@ -78,9 +79,9 @@ module.exports = function(app, passport) {
           min = math.min(yValues);
           sd = math.std(yValues);
 
-          pvl = regression.exponential(pairs);
+          pvl = regression.logarithmic(pairs);
           pvp = regression.polynomial(pairs, { order: xValues.length / 2 });
-          for (let i = 0; i <= xValues[xValues.length - 1] + 1.2; i += 0.2) {
+          for (let i = xValues[0]-1.2; i <= xValues[xValues.length - 1] + 1.2; i += 0.2) {
             pXValues.push(i);
             pLYValues.push(pvl.predict(i)[1]);
             pPYValues.push(pvp.predict(i)[1]);
@@ -155,6 +156,79 @@ module.exports = function(app, passport) {
     isLoggedIn,
     authController.signin
   );
+
+  
+ 
+  app.post(
+    "/update/password",
+    function(req, res) {
+      var condition = req.params.table;
+      console.log("table:", condition);
+      console.log(req.user.email);
+      console.log("Params", req.params);
+      console.log(req.body.password)
+      models.user
+        .update({password: bCrypt.hashSync(req.body.password, bCrypt.genSaltSync(8), null)},{
+          where: {
+            email: req.user.email
+            
+          }
+        })
+        .then(function(data) {
+          res.redirect("/settings");
+        });
+    },
+    isLoggedIn,
+    authController.signin
+  );
+
+  app.post(
+    "/update/firstname",
+    function(req, res) {
+      var condition = req.params.table;
+      console.log("table:", condition);
+      console.log(req.user.email);
+      console.log("Params", req.params);
+      console.log("name",req.body.firstname)
+      models.user
+        .update({firstname: req.body.firstname},{
+          where: {
+            email: req.user.email
+            
+          }
+        })
+        .then(function(data) {
+          res.redirect("/settings");
+        });
+    },
+    isLoggedIn,
+    authController.signin
+  );
+
+
+  app.post(
+    "/update/lastname",
+    function(req, res) {
+      var condition = req.params.table;
+      console.log("table:", condition);
+      console.log(req.user.email);
+      console.log("Params", req.params);
+      console.log("name",req.body.lastname)
+      models.user
+        .update({lastname: req.body.lastname},{
+          where: {
+            email: req.user.email
+            
+          }
+        })
+        .then(function(data) {
+          res.redirect("/settings");
+        });
+    },
+    isLoggedIn,
+    authController.signin
+  );
+
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

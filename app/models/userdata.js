@@ -6,9 +6,9 @@ module.exports = function(sequelize, Sequelize) {
 		
         username: {type:Sequelize.TEXT},
         xName : {type:Sequelize.TEXT},
-		xValue : {type:Sequelize.INTEGER},
+		xValue : {type:Sequelize.FLOAT},
         yName : {type:Sequelize.TEXT},
-        yValue : {type:Sequelize.INTEGER},
+        yValue : {type:Sequelize.FLOAT},
         tableName : {type:Sequelize.TEXT},
         status: {type: Sequelize.ENUM('active','inactive'),defaultValue:'active' }
 
